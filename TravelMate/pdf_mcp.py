@@ -14,10 +14,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8001)
-
 @app.post("/generate_pdf")
 def generate_pdf(request_data: dict):
     trip_plan = request_data.get("trip_plan", "No trip details provided.")
@@ -40,3 +36,4 @@ def generate_pdf(request_data: dict):
         media_type="application/pdf",
         headers={"Content-Disposition": "attachment; filename=trip_plan.pdf"}
     )
+
