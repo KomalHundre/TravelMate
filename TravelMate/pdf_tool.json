@@ -1,0 +1,17 @@
+{
+  "name": "pdf_generator",
+  "description": "Generates PDF files from text content using FastAPI PDF MCP server.",
+  "type": "rest",
+  "url" : "http://192.168.31.162/generate_pdf",
+  "method": "POST",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "content": {
+        "type": "string",
+        "description": "The text content to include in the PDF file."
+      }
+    },
+    "required": ["content"]
+  }
+}
