@@ -1,9 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "pdf_mcp.py", "use": "@vercel/python" }
+    { "src": "api/index.py", "use": "@vercel/python" },
+    { "src": "package.json", "use": "@vercel/next" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "pdf_mcp.py" }
+    { "src": "/api/(.*)", "dest": "api/index.py" },
+    { "src": "/(.*)", "dest": "/" }
   ]
 }
